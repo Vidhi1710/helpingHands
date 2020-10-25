@@ -1,0 +1,87 @@
+#cont{
+	margin: 0 auto;
+}
+body{
+	background: url("https://www.designbolts.com/wp-content/uploads/2013/02/Honey-comb-Grey-Seamless-Pattern-For-Website-Background.jpg");
+	font-family: 'Sen', sans-serif;
+}
+#heading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  text-align: center;
+}
+#text{
+	margin:50 125 65 125;
+	font-size: 1.3em;
+}
+#intro img{
+	float: right;
+}
+#main{
+	color: skyblue;
+	background: white;
+}
+#mimg{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.navbar{
+	background: black;
+	margin:0;
+	border: 0 solid black;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color: skyblue;
+}
+.navbar-default .navbar-brand:hover{
+	color: skyblue;
+}
+h1{
+	text-align: center;
+	font-family: 'Noto Serif JP', serif;
+	margin-top: 50px;
+	text-shadow: 3px 3px skyblue;
+}
+#head{
+  position: absolute;
+  top:13px;
+  left:56px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#subhead{
+  font-size: 11px;
+  position: absolute;
+  top: 29px;
+  left: 56px;
+}
+#footer{
+	width:100%;
+	height:180;
+	color: white;
+	background: black;
+	text-align: center;
+	padding:15px;
+}
+.fa-heart{
+	color: red;
+}
+.navbar-default .navbar-nav>li>a:active{
+	background: white;
+}
+.navbar-default .navbar-brand:active{
+	background: white;
+};
+.a{
+	background: black;
+}

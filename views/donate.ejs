@@ -33,6 +33,13 @@
   						<li><a href="\volunteer">Volunteering</a></li>
   						<li><a style="color:skyblue;background:white;" href="\donate">Donation</a></li>
   						<li><a href="\blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#>">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
   					</ul>
   				</div>
   			</div>

@@ -2,6 +2,7 @@ var mongoose=require("mongoose");
 
 
 var volunteerSchema= new mongoose.Schema({
+	city:String,
 	author:{
 		id:{
 			type:mongoose.Schema.Types.ObjectId,

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Helping Hands</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+  	<link href="https://fonts.googleapis.com/css?family=Monoton|Noto+Serif+JP:900|Sen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="/donate.css">
+	<script src="/main.js"></script>
+  </head>
+  <body>
+    <div id="cont">
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  	        			<span class="sr-only">Toggle navigation</span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	      			</button>
+  					<a href="/" class="navbar-brand">
+  						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
+  	          <span id="head">HelpingHands</span>
+  	          <span id="subhead">Saluting Corona Warriors</span>
+  					</a>
+  				</div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a href="/volunteer">Volunteering</a></li>
+  						<li><a href="/donate">Donation</a></li>
+  						<li><a style="color:skyblue;background:white;" href="/blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#>">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+		<br><br><br><br>
+		<div class="container">
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+
+<div class="container" style="width:30%">
+	<h1 style="text-align: center">
+		Creating a New Blog
+	</h1>
+	<div style= "width:65%, margin: 0 auto">
+		<form action="/blogs" method="POST">
+			<div class="form-group">
+				<input type="textbox" placeholder="Name" name="cname" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="Image URL" name="image" class="form-control">
+			</div>
+			<div class="form-group">
+				<textarea style="display:none;" id="spec" placeholder="Blog" rows="10" name="description" class="form-control"></textarea>
+			</div>
+						<div style="background-color:#c9c9c9">
+				<button type="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold"><b>B</b>
+				</button>
+					<button type="button" class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italic"><i>I</i>
+				</button>
+				<button type="button" class="fontStyle" onclick="document.execCommand( 'underline',false,null);" title="Underline"><u>U</u>
+				</button>
+					<button type="button" class="fontStyle" onclick="document.execCommand( 'strikethrough');" title="Strike Through"><i class="fas fa-strikethrough"></i>
+				</button>
+					<button type="button" class="fontStyle" onclick="document.execCommand( 'insertOrderedList');" title="Ordered List"><i class="fas fa-list-ol"></i>
+					</button>
+					<button type="button" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList');" title="Unordered List"><i class="fas fa-list-ul"></i>
+					</button>
+				</div>
+			<div class="form-group">
+				<div id="editor1" contenteditable="true" onkeyup="myFunc()" class="form-control" style="height:190px;overflow: scroll;">
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-block">
+			</div>
+		</form>
+	</div>
+	<a href="/blogs">Go Back!</a>
+</div>
+
+<%- include('../partials/footer') %>

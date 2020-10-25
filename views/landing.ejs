@@ -20,7 +20,7 @@
 	        			<span class="icon-bar"></span>
 	        			<span class="icon-bar"></span>
 	      			</button>
-					<a href="\" class="navbar-brand" style="color:skyblue;">
+					<a href="\" class="navbar-brand">
 						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
 	          <span id="head">HelpingHands</span>
 	          <span id="subhead">Saluting Corona Warriors</span>
@@ -31,12 +31,32 @@
 						<li><a href="\volunteer">Volunteering</a></li>
 						<li><a href="\donate">Donation</a></li>
 						<li><a href="\blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#>">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	 	<img src="https://www.healthshots.com/wp-content/uploads/2020/07/doc-day.jpg" id="mimg">
 	 	<div id="heading">WARRIORS OF COVID'19</div>
+		<br><br>
+				<div class="container">
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
 	 	<h1>Facts</h1>
 	 	<div class="cover1">
 	 	   <div class="text1">
@@ -86,7 +106,7 @@
 						</div>
 						<div class="col-md-4">
 							<i style="font-size:35px" class="fas fa-blog"></i>
-							<br><b style="font-size:20px;">17<br>BLOGS</b><br>written
+							<br><b style="font-size:20px;"><%= b %><br>BLOGS</b><br>written
 						</div>
 					</div>
 				</div>

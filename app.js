@@ -11,7 +11,8 @@ var app=express(),
 	localStratergy=require("passport-local"),
 	flash=require("connect-flash"),
 	blogRoutes=require("./routes/blog"),
-	userRoutes=require("./routes/user");
+	userRoutes=require("./routes/user"),
+	middleware=require("../middleware");
 
 
 var request = require("request");
@@ -56,14 +57,18 @@ app.get("/",function(req,res){
 		var today=s2.split('<span')[0];
 		var s3=body.split('<div class="total-data-list deaths"><span class="ind-mp_num">')[2];
 		var death=s3.split('<span')[0];
-		// Blog.count( {}, function(error, result){
-		// console.log(result)      
-		// })
-		res.render("landing",{total:total,death:death,today:today});
+		var b;
+		Blog.count({}, function(error, result){
+			b=result; 
+			res.render("landing",{total:total,death:death,today:today,b:b});
+		})
 	});	
 });
 app.get("/volunteer",function(req,res){
 	res.render("volunteer")
+});
+app.get("/volunteer/new",middleware.checkVolunteer,function(req,res){
+	res.render("nvolunteer")
 });
 app.get("/donate",function(req,res){
 	res.render("donate")

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Helping Hands</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+  	<link href="https://fonts.googleapis.com/css?family=Monoton|Noto+Serif+JP:900|Sen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="/donate.css">
+	  <link rel="stylesheet" type="text/css" href="/blog.css">
+	  <script src="/main.js"></script>
+  </head>
+  <body>
+    <div id="cont">
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  	        			<span class="sr-only">Toggle navigation</span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	      			</button>
+  					<a href="/" class="navbar-brand">
+  						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
+  	          <span id="head">HelpingHands</span>
+  	          <span id="subhead">Saluting Corona Warriors</span>
+  					</a>
+  				</div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a href="/volunteer">Volunteering</a></li>
+  						<li><a href="/donate">Donation</a></li>
+  						<li><a href="/blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a style="color:skyblue;background:white;" href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+		<br><br><br><br>
+		<div class="container">
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+
+<div class="container" style="width:30%">
+	<h1 style="text-align: center;margin: 0 0 10px 0;">
+		Sign Up
+	</h1>
+	<div style= "width:30%, margin: 0 auto">
+		<form action="/register" method="post">
+			<div class="form-group">
+				<input type="email" name="username" placeholder="Email" class="form-control">
+				<p class="help-block">
+					<i class="fa fa-info-circle" aria-hidden="true"></i> This email address will be your username.
+				</p>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" placeholder="Password" class="form-control">	
+			</div>
+			<div class="form-group">
+				<input type="text" name="fullname" placeholder="Full name" class="form-control" required>
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-block">
+			</div>
+		</form>
+		<h3 style="text-align:center;">
+			OR
+		</h3>
+		<div class="form-group">
+			<a href="/login" class="btn btn-primary btn-block">Log In</a>
+		</div>
+	</div>
+</div>
+<br><br><br><br><br><br><br>
+<%- include('./partials/footer') %>
