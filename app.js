@@ -148,6 +148,8 @@ app.post("/donate/request",function(req,res){
 	req.flash("success","Your request has been submitted. We will try to reach you ASAP!");
 	res.redirect("/donate");
 })
-app.listen(3000,function(req,res){
+
+const port = process.env.PORT || 3000
+app.listen(port,function(req,res){
 	console.log("Starting  web server");
 })
