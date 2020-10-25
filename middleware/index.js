@@ -1,5 +1,6 @@
 var middlewareObj={},
-	Blog=require("../models/blog");
+	Blog=require("../models/blog"),
+	User=require("../models/user");
 middlewareObj.checkBlogOwnership=function (req,res,next){
 	if(req.isAuthenticated()){
 		Blog.findById(req.params.id,function(err,foundBlog){
@@ -22,12 +23,12 @@ middlewareObj.checkBlogOwnership=function (req,res,next){
 }
 middlewareObj.checkVolunteer=function (req,res,next){
 	if(req.isAuthenticated()){
-		User.findById(req.params.id,function(err,foundUser){
+		User.findById(req.user._id,function(err,foundUser){
 			if(err){
 				req.flash("error","User not found");
 				res.redirect("back");
 			}else{
-				if(foundUser.registered.equals("false")){
+				if(foundUser.registered=="false"){
 					next();
 				}else{
 					req.flash("error","You are already registered!");
@@ -37,7 +38,7 @@ middlewareObj.checkVolunteer=function (req,res,next){
 		})
 	}else{
 		req.flash("error","You need to be logged in to do that");
-		res.redirect("back");
+		res.redirect("/login");
 	}
 }
 middlewareObj.isLoggedIn = function(req,res,next){

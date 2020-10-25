@@ -43,7 +43,7 @@
   					</ul>
   				</div>
   			</div>
-  		</nav>
+		</nav>
 
       <!-- Common Content goes here -->
       <div style="background:#d9e5f3;border-style: outset;">
@@ -54,11 +54,24 @@
           <div class="col-md-5" style="text-align:center;">
             <h1 id="x" style="font-family: 'Vampiro One', cursive;">Make a change by donating</h1>
             <p>Because every donation makes a difference!</p>
-            <a class="btn btn-primary" style="margin-bottom:5px;" href="#">Donate Now</a>
-            <a class="btn btn-primary" style="margin-bottom:5px;" href="#">Request Doantion</a>
+            <a class="btn btn-primary" style="margin-bottom:5px;" href="/donate/new">Donate Now</a>
+            <a class="btn btn-primary" style="margin-bottom:5px;" href="/donate/request">Request Doantion</a>
           </div>
         </div>
       </div>
+		<br><br><br>
+		<div class="container">
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+		</div>
       <h1>Active Donations</h1>
       <br>
       <div style="width:64%;margin:0 auto;">
@@ -70,28 +83,17 @@
           <th style="padding-right:60px;">Donor name</th>
           <th style="padding-right:180px;">City</th>
         </tr>
+		  <% var x=1 %>
+		  <% donations.forEach(function(donation){ %>
           <tr>
-            <td>1.</td>
-            <td>Kn-95 MAsks and kits</td>
-            <td>5</td>
-            <td>Vidhi Arora</td>
-            <td>Delhi</td>
+            <td><%= x %></td>
+            <td><%= donation.iname %></td>
+            <td><%= donation.quantity %></td>
+            <td><%= donation.author.fullname %></td>
+            <td><%= donation.city %></td>
+			<% x=x+1 %>
           </tr>
-          <tr>
-            <td>1.</td>
-            <td>Kn-95 MAsks and kits</td>
-            <td>5</td>
-            <td>Vidhi Arora</td>
-            <td>Delhi</td>
-          </tr>
-          <tr>
-            <td>1.</td>
-            <td>Kn-95 MAsks and kits</td>
-            <td>5</td>
-            <td>Vidhi Arora</td>
-            <td>Delhi</td>
-          </tr>
-
+			<% }); %>
       </table>
       <br><br><br>
 </div>

@@ -46,6 +46,19 @@
 
       <!-- Common Content goes here -->
       <img id="mimg" src="https://self4society.mygov.in/wp-content/uploads/2020/03/mygov-1000000000245820088.jpg">
+		<div class="container">
+			<br><br>
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
       <h1>Register As Volunteer</h1>
       <div class="row">
         <div class="container">
@@ -68,7 +81,13 @@
               <li>They will be used for confidence building measures, besides other tasks.</li>
               <li>A certificate of appreciation to be given to all volunteers.</li>
             </ul>
-            <a href="#" class="btn btn-primary">Register Now</a>
+			  <% if(s==""){ %>
+            <a href="/volunteer/new" class="btn btn-primary">Register Now</a>
+			  <% }else{ %>
+			  <button class="btn btn-primary" disabled>
+				  Already Registered
+			  </button>
+			  <% } %>
             <br><br>
           </div>
           <div class="col-md-6">

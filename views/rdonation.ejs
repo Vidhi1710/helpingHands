@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Helping Hands</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+  	<link href="https://fonts.googleapis.com/css?family=Monoton|Noto+Serif+JP:900|Sen&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="/b.css">
+  	<link rel="stylesheet" type="text/css" href="/blog.css">
+  </head>
+  <body>
+    <div id="cont">
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  	        			<span class="sr-only">Toggle navigation</span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	      			</button>
+  					<a href="/" class="navbar-brand">
+  						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
+  	          <span id="head">HelpingHands</span>
+  	          <span id="subhead">Saluting Corona Warriors</span>
+  					</a>
+  				</div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a style="color:skyblue;background:white;" href="/volunteer">Volunteering</a></li>
+  						<li><a href="/donate">Donation</a></li>
+  						<li><a href="/blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+
+
+<div class="container" style="width:30%">
+	<h1 style="text-align: center">
+		Request Donation
+	</h1>
+	<h5 style="text-align:center;">
+		ONLY FOR COVID'19 WARRIORS
+	</h5>
+	<div style= "width:65%, margin: 0 auto">
+		<form action="/donate/request" method="post">
+			<div class="form-group">
+				<input type="text" placeholder="Occupation" required name="donate[iname]" class="form-control">
+			</div>
+			<div class="form-group">
+				Proof of occupation,if any
+				<input type="file" placeholder="Occupation" required name="donate[iname]" class="form-control">
+			</div>
+			<p class="help-block">
+				<i class="fa fa-info-circle" aria-hidden="true"></i> The proof will ace up the process of manual verifivation!
+			</p>
+			<div class="form-group">
+				<input type="text" placeholder="Item Name" required name="donate[iname]" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="number" placeholder="Quantity" required name="donate[quantity]" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="Address" required name="address" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="City" required name="donate[city]" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="State" required name="state" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="Zip Code" required name="zip" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" placeholder="Phone Number" required name="phone" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="radio" name="check">Drop items at my home<br>
+				<input type="radio" name="check">Pick up items from HelpingHand's office
+			</div> 
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-block">
+			</div>
+      <br>
+		</form>
+	</div>
+</div>
+
+
+
+<%- include ("./partials/footer.ejs") %>

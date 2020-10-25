@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Helping Hands</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+  	<link href="https://fonts.googleapis.com/css?family=Monoton|Noto+Serif+JP:900|Sen&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="/b.css">
+  	<link rel="stylesheet" type="text/css" href="/blog.css">
+  </head>
+  <body>
+    <div id="cont">
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  	        			<span class="sr-only">Toggle navigation</span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	      			</button>
+  					<a href="/" class="navbar-brand">
+  						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
+  	          <span id="head">HelpingHands</span>
+  	          <span id="subhead">Saluting Corona Warriors</span>
+  					</a>
+  				</div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a style="color:skyblue;background:white;" href="/volunteer">Volunteering</a></li>
+  						<li><a href="/donate">Donation</a></li>
+  						<li><a href="/blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#>">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+
+
+<div class="container" style="width:30%">
+	<h1 style="text-align: center">
+		Register As Volunteer
+	</h1>
+	<div style= "width:65%, margin: 0 auto">
+		<form action="/volunteer" method="POST">
+			<div class="form-group">
+        Date of birth<br>
+				<input type="date" required placeholder="Age" name="cname" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" required placeholder="Address" name="address" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" required placeholder="City" name="city" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" required placeholder="State" name="state" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" required placeholder="Zip Code" name="zip" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="textbox" required placeholder="Phone Number" name="phone" class="form-control">
+			</div>
+			<div class="form-group">
+        What time can you work?<br>
+				<input type="radio" name="image">Anytime<br>
+				<input type="radio" name="image">Morning<br>
+				<input type="radio" name="image">Afternoon<br>
+				<input type="radio" name="image">Evening<br>
+				<input type="radio" name="image">Night
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-block">
+			</div>
+      <br>
+		</form>
+	</div>
+</div>
+
+
+
+ <div id="footer">
+   <div class="row">
+     <div class="col-sm-6">
+       <h3>CONTACT US AT:</h3><br>
+       <a href="https://www.facebook.com/vidhi.arora.779857/"><i style="font-size:45px;color:white; margin-right:24px;" class="fab fa-facebook-square"></i></a>
+           <a href="https://www.instagram.com/i_vidhiarora/"><i style="font-size:45px;color:white; margin-right:24px;" class="fab fa-instagram-square"></i></a>
+       <a href="mailto:vidhiarora1710@gmail.com" target="_blank"><i style="font-size:46px;color:white;" class="fas fa-envelope"></i></a>
+     </div>
+     <div class="col-sm-6">
+       <br>
+       <span style="font-size:16px;">Made with <i class="fa fa-heart" aria-hidden="true"></i> by Vidhi Arora</span><br>
+     </div>
+   </div>
+ </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
