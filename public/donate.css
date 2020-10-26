@@ -4,7 +4,7 @@
 body{
 	background: url("https://t3.ftcdn.net/jpg/01/84/62/36/240_F_184623690_5zlHB3MRASqKWiRcjAcBP2YfAORHhZOd.jpg");
 	font-family: 'Sen', sans-serif;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 }
 td{
 	padding: 5px;
