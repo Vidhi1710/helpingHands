@@ -4,7 +4,7 @@
 body{
 	background: url("https://t3.ftcdn.net/jpg/01/84/62/36/240_F_184623690_5zlHB3MRASqKWiRcjAcBP2YfAORHhZOd.jpg");
 	font-family: 'Sen', sans-serif;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 td{
 	padding: 5px;
@@ -16,6 +16,41 @@ th{
 	font-weight: bold;
 	font-size: 21px;
 }
+@media only screen and (max-width: 591px) {
+  th {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 591px) {
+  td {
+    font-size: 12px;
+  }
+}
+#city{
+	padding-right:180px;
+}
+@media only screen and (max-width: 591px) {
+  #city{
+    padding-right:40px;
+  }
+}
+#iname{
+	padding-right:100px;
+}
+@media only screen and (max-width: 591px) {
+  #iname{
+    padding-right:44px;
+  }
+}
+#dname{
+	padding-right:60px;
+}
+@media only screen and (max-width: 591px) {
+  #dname{
+    padding-right:50px;
+  }
+}
+
 h1{
 	text-align: center;
 	font-family: 'Noto Serif JP', serif;
