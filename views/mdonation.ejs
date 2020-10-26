@@ -10,6 +10,7 @@
   	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   	<link rel="stylesheet" type="text/css" href="/b.css">
   	<link rel="stylesheet" type="text/css" href="/blog.css">
+	  <link rel="stylesheet" type="text/css" href="/medis.css">
   </head>
   <body>
     <div id="cont">
@@ -30,8 +31,8 @@
   				</div>
   				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   					<ul class="nav navbar-nav navbar-right">
-  						<li><a style="color:skyblue;background:white;" href="/volunteer">Volunteering</a></li>
-  						<li><a href="/donate">Donation</a></li>
+  						<li><a href="/volunteer">Volunteering</a></li>
+  						<li><a style="color:skyblue;background:white;" href="/donate">Donation</a></li>
   						<li><a href="/blogs">Blogs</a></li>
 						<% if(!currentUser){ %>
 						<li><a href="/login">Login</a></li>
@@ -46,11 +47,11 @@
   		</nav>
 
 
-<div class="container" style="width:30%">
+<div class="container" id="forms">
 	<h1 style="text-align: center">
 		Make A Donation
 	</h1>
-	<div style= "width:65%, margin: 0 auto">
+	<div>
 		<form action="/donate" method="POST">
 			<div class="form-group">
 				<input type="text" placeholder="Item Name" required name="donate[iname]" class="form-control">

@@ -1,0 +1,22 @@
+#tbl{
+	width: 67%;
+	margin: 0 auto;
+}
+@media only screen and (max-width: 991px) {
+  #tbl {
+    width: 100%;
+  }
+}
+#forms{
+	width:30%
+}
+@media only screen and (max-width: 801px) {
+  #forms {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 591px) {
+  #forms {
+    width: 70%;
+  }
+}
