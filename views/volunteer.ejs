@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Helping Hands</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" >
+  	<link href="https://fonts.googleapis.com/css?family=Monoton|Noto+Serif+JP:900|Sen&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="volunteer.css">
+  </head>
+  <body>
+    <div id="cont">
+  		<nav class="navbar navbar-default navbar-fixed-top">
+  			<div class="container-fluid">
+  				<div class="navbar-header">
+  				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  	        			<span class="sr-only">Toggle navigation</span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	        			<span class="icon-bar"></span>
+  	      			</button>
+  					<a href="\" class="navbar-brand">
+  						<img width="40px" src="https://cfncw.org/wp-content/uploads/2015/04/helping-hands-bg.png" alt="">
+  	          <span id="head">HelpingHands</span>
+  	          <span id="subhead">Fighting Mental Health Stigma</span>
+  					</a>
+  				</div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav navbar-right">
+  						<li><a style="color:skyblue;background:white;" href="\volunteer">Volunteering</a></li>
+  						<li><a href="/activity">Activities</a></li>
+  						<li><a href="/blogs">Blogs</a></li>
+						<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">SignUp</a></li>
+						  <% }else{ %>
+						  <li><a href="#>">Signed In As <%= currentUser.fullname %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						  <% } %>
+  					</ul>
+  				</div>
+  			</div>
+  		</nav>
+
+      <!-- Common Content goes here -->
+      <img id="mimg" src="https://www.anzaed.org.au/wp-content/uploads/2019/12/Volunteers-Needed-Image.png">
+		<div class="container">
+			<br><br>
+		<% if(error && error.length>0){ %>
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+      <h1>Work With Us</h1>
+      <div class="row">
+        <div class="container">
+          <div class="col-md-6">
+            Become a helper by registering yourself as a volunteer! All your provided information will be forwarded to various NGOs, NCC, NSS, Scouts and civil society to strengthen the fight against mental-illness.
+            The idea is to make the fight a mass movement.
+			  <h4><b>Volunteer time</b></h4>
+			  All we want from you is your time to minimise the gap between the patient and the healer.<br>
+			  <b>Eligibility:</b><br>
+			  Above 18 years of age and willing to do social welfare.<br>
+What will you do?
+
+            <ul>
+              <li>Promoting awareness through social media.</li>
+              <li>Going for on the field awareness campaigns with the team.</li>
+              <li>Providing helpline assistance.</li>
+              <li>Assisting in conducting workshops at different places.</li>
+            </ul>
+			  <h4><b>Share your expertise</b></h4>
+            If you are an expert in the field and know the ways that would contribute in curing mental illness and promoting mental health and really want to contribute for the cause then you are most welcome.<br>
+			  <b>Eligibility:</b><br>
+A certified psychologist or therapist.<br><br>
+			  <% if(s==""){ %>
+            <a href="/volunteer/new" class="btn btn-primary">Register Now</a>
+			  <% }else{ %>
+			  <button class="btn btn-primary" disabled>
+				  Already Registered
+			  </button>
+			  <% } %>
+            <br><br><br>
+          </div>
+          <div class="col-md-6">
+            <img style="width:100%" src="https://icma.org/sites/default/files/Volunteerism.jpeg">
+            <br><br>
+          </div>
+        </div>
+      </div>
+<br>
+      <div id="footer">
+  			<div class="row">
+  				<div class="col-sm-6">
+  					<h3>CONTACT US AT:</h3><br>
+  					<a href="https://www.facebook.com/vidhi.arora.779857/"><i style="font-size:45px;color:white; margin-right:24px;" class="fab fa-facebook-square"></i></a>
+  					    <a href="https://www.instagram.com/i_vidhiarora/"><i style="font-size:45px;color:white; margin-right:24px;" class="fab fa-instagram-square"></i></a>
+  					<a href="mailto:vidhiarora1710@gmail.com" target="_blank"><i style="font-size:46px;color:white;" class="fas fa-envelope"></i></a>
+  				</div>
+  				<div class="col-sm-6">
+  					<br>
+  					<span style="font-size:16px;">Made with <i class="fa fa-heart" aria-hidden="true"></i> by Team Webdoers</span><br>
+  				</div>
+  			</div>
+  		</div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>

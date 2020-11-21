@@ -1,0 +1,14 @@
+
+#forms{
+	width:30%
+}
+@media only screen and (max-width: 801px) {
+  #forms {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 591px) {
+  #forms {
+    width: 70%;
+  }
+}

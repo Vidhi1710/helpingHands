@@ -1,0 +1,107 @@
+#date{
+	font-size: 18px;
+    letter-spacing: 3px;
+}
+.fontStyle{
+  background-color: #c9c9c9;
+border: 0;
+font-size: 16px;
+    padding: 4px 10px;
+}
+.searchbar{
+	width: 90%;
+    height: 40px;
+    font-size: 18px;
+    padding-left: 15px;
+	margin-right:10px;
+}
+.border{
+	margin: 20px auto;
+    border: 20px solid #bdc3c7;
+    padding: 20px;
+   width:80%;
+	/* max-width:800px; */
+}
+.border img{
+	margin:auto;
+	width:100%;
+}
+.icon{
+	height: 35px;
+    padding: 9px;
+    width: 40px;
+    border-radius: 0;
+	margin-bottom:2px;
+}
+#aware{
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+	text-align: center;
+}
+img.inImg {
+	float: left;
+    height: 210px;
+    width: auto;
+    padding-right: 10px;
+}
+.jumbotron{
+	background-color: gainsboro;
+}
+#deleteForm{
+	display:inline;
+}
+h2{
+	color: #2c3e50;
+    font-weight: bold;
+}
+
+.thumbnail{
+	padding:10px;
+	box-shadow:2px 2px #ccc;
+}
+
+@media only screen and (max-width: 767px) {
+  .userBody{
+  	text-align: center;
+  }
+}
+#uname{
+  font-size: 50px;
+  margin-top: 50px;
+}
+#navm{
+  background-color: aliceblue;
+  font-size: 22px;
+  text-align: center;
+  padding-left: 10px;
+  height:35px;
+}
+.nopost{
+  background-color: #e6e3e3;
+    height: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    padding-top: 95px;
+}
+.connect{
+  font-size: 45px;
+  padding-right:20px;
+}
+.fa.fa-instagram {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+#gototop{
+    font-size: 25px;
+    bottom: 25px;
+    position: fixed;
+    right: 40px;
+    border-radius: 50%;
+}

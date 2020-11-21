@@ -1,0 +1,37 @@
+<%- include ("../partials/header.ejs") %>
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-12">
+			<div class="border">
+				<img class="img-responsive" src="<%= blog.image %>">
+				<div class="caption-full">
+					<a id="date">
+						<%= blog.date.toString().substring(0,15) %>
+					</a>
+					<h2>
+						<%= blog.name %>
+					</h2>
+					<p>
+						<em>Submitted By <%= blog.author.fullname %></em>
+					</p>
+					<p>
+						<%- blog.description %>
+					</p>
+					<% if(currentUser && blog.author.id.equals(currentUser._id)){ %>
+					<a class="btn btn-xs btn-warning icon" href="/blogs/<%= blog._id %>/edit"><i class="fas fa-edit"></i></a>
+					<form id="deleteForm" method="post" action="/blogs/<%= blog._id %>?_method=DELETE">
+						<button class="btn btn-xs btn-danger icon">
+							<i class="fas fa-trash-alt"></i>
+						</button>
+					</form>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+<h1>
+</h1>
+
+<%- include ("../partials/footer.ejs") %>
