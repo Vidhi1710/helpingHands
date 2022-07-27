@@ -10,6 +10,9 @@ td{
 	padding: 5px;
 	font-size: 16px;
 }
+#tbl{
+	margin: 0 auto;
+}
 th{
 	padding: 5px;
 	background: skyblue;
@@ -31,7 +34,7 @@ th{
 }
 @media only screen and (max-width: 591px) {
   #city{
-    padding-right:40px;
+    padding-right:0px;
   }
 }
 #iname{
@@ -39,7 +42,7 @@ th{
 }
 @media only screen and (max-width: 591px) {
   #iname{
-    padding-right:44px;
+    padding-right:2px;
   }
 }
 #dname{
@@ -47,7 +50,7 @@ th{
 }
 @media only screen and (max-width: 591px) {
   #dname{
-    padding-right:50px;
+    padding-right:30px;
   }
 }
 

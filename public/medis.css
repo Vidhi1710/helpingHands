@@ -1,12 +1,4 @@
-#tbl{
-	width: 67%;
-	margin: 0 auto;
-}
-@media only screen and (max-width: 991px) {
-  #tbl {
-    width: 100%;
-  }
-}
+
 #forms{
 	width:30%
 }
